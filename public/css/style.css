@@ -1,0 +1,321 @@
+nav {
+  margin-bottom: 50px;
+}
+
+.header-links a {
+  color: #fff;
+}
+
+.footer { 
+  background:#000; 
+  color:#fff; 
+}
+
+.menu {
+  height: 400px;
+}
+
+.menu-item img{
+  height: 300px;
+  width: 300px;
+}
+
+/* Style the form */
+#enrollForm {
+  background-color: #ffffff;
+  margin: 100px auto;
+  /* padding: 40px; */
+  width: 70%;
+  min-width: 300px;
+}
+
+/* Style the input fields */
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+
+button {
+  background-color: #4CAF50;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 17px;
+  font-family: Raleway;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+#prevBtn {
+  background-color: #bbbbbb;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #4CAF50;
+}
+
+.actions {
+  padding-top: 60px;
+}
+
+
+/*************************************************
+//
+//  Custom Controls
+//
+*/
+
+/***************** Radios ***********************/
+.radio-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.radiomark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.radio-container:hover input ~ .radiomark {
+  background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.radio-container input:checked ~ .radiomark {
+  background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.radiomark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radio-container input:checked ~ .radiomark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radio-container .radiomark:after {
+ 	top: 9px;
+	left: 9px;
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	background: white;
+}
+
+/***************** Checkbox ***********************/
+.lgcheckbox {
+  display: block;
+  position: relative;
+  padding-left: 0px;
+  margin-bottom: 0px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox  */
+.lgcheckbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox  */
+.checkmark {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 45px;
+  width: 45px;
+  background-color: #fff;
+  border: 1.25px solid #d2d2d2;
+  border-radius: 4px;
+}
+
+/* Create the checkmark/indicator (hidden when not checked)  */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* When the checkbox is checked, add a blue background  */
+.lgcheckbox input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Show the checkmark when checked  */
+.lgcheckbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator  */
+.lgcheckbox .checkmark:after {
+  left: 13px;
+  top: 2px;
+  width: 17px;
+  height: 32px;
+  border: solid white;
+  border-width: 0 5px 5px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.lgcheckbox #agreeText {
+  margin-left: 4rem;
+  font-size: 2rem;
+  letter-spacing: 0.15px;
+  color: #504e4e;
+  line-height: 2.35rem;
+}
+
+.checked {
+  background: #cc0001 !important;
+  color: #fff !important;
+}
+
+
+
+/*************************************************
+//
+//  Steps
+//
+*/
+
+ul {
+  margin-left: 3rem;
+}
+
+li{ 
+  font-size: .925rem;    
+  line-height: 1.35rem;    
+  letter-spacing: 0.35px !important;
+}
+
+.terms-title {
+  text-align: center;      
+  width: 100%;    
+  font-weight: 400;    
+  display: block;    
+  line-height: 1.5rem;    
+  margin-top: 1rem;    
+  font-size: 1.25rem;    
+  line-height: 2.35rem;
+  letter-spacing: 0.35px !important;
+}
+
+.terms-content {
+  font-size: .925rem; 
+  line-height: 1.35rem; 
+  letter-spacing: 0.35px !important;
+}
+
+.line {
+  font-size: 0.925rem; 
+  line-height: 1.35rem; 
+  letter-spacing: 0.5px !important; 
+  border-top: 1px solid  #504e4e; 
+  padding-top: 1.35rem; 
+  color:  #504e4e;
+}
+
+.step-one .title, .step-two .title, .step-three .title, .step-four .title, .step-five .title {
+  text-align: center;
+  display: block;
+  width: 100%;
+  font-size: 2.65rem;
+  font-weight: 500;
+  letter-spacing: 0px;
+}
+
+.step-one .content, .step-two .content, .step-three .content, .step-four .content, .step-five .content {
+  text-align: center;
+  font-size: 1.55rem;
+  letter-spacing: 0.5px;
+  display: block;
+  width: 100%;
+}
+
+.step-four img {
+  width: auto;
+  height: 15.5rem;
+  margin: 0 auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.handsVisual {
+  width: 100%;
+}
+
+.leftHand img, .rightHand img {
+    width: 60%;
+    margin: 0.5rem auto;
+    display: block;
+}

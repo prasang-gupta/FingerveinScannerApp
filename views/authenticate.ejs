@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    
+    <link rel="stylesheet" href="/css/bootstrap.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+
+    <script type="text/javascript" src="/javascripts/common/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/javascripts/common/popper.min.js"></script>
+    <script type="text/javascript" src="/javascripts/common/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/javascripts/common/popper.min.js"></script>
+    <script type="text/javascript" src="/javascripts/common/bootstrap.js"></script>
+    <script type="text/javascript" src="/javascripts/common/bootstrap.bundle.js"></script>
+    <script type="text/javascript" src="/javascripts/common/ua-parser.min.js"></script>
+
+    <script type="text/javascript" src="/javascripts/plugin_manager.js"></script>
+    <script type="text/javascript" src="/javascripts/authentication.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Header -->
+    <% include partials/header %>
+      
+    <!-- Main Content -->
+    <div class="container">
+
+      <h1>Fingervein Scanner Demo</h1>
+  
+      <!-- Alerts -->
+      <% include partials/alert %>
+
+      <!-- Multi-Step Form -->
+      <form id="enrollForm" action="">
+
+        <!-- Step One: Select Action -->
+        <div class="step-one tab">
+          <p class="title">Authentication</p>
+          <p class="content">Please scan one of the fingers you registered with earlier.
+            Authenticate yourself. Click proceed to continue.</p>
+        </div>
+
+       <!-- Step Two: Success/Failure  -->
+        <div class="step-two tab">
+          <p class="title">Enrollment Results</p>
+            <p class="content">
+              Phew, You Did It! Congratulations <span id="user">Demo User</span>
+              <span id="email">[johny.smithy@example.com] !</span>
+              You successfully scanned your First Finger. Easy, right?
+              Let's do that again with your other middle finger.
+            </p>
+            <p>
+              <span class="name" id="first-name"></span> <span class="name" id="last-name"></span>
+              <span class="email" id="email">antoinette.young@pwc.com</span>
+            </p>
+        </div>
+
+        <div class="actions" style="overflow:auto;">
+          <div style="float:right;">
+            <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+            <button type="button" id="nextBtn" onclick="nextPrev(1)">Proceed</button>
+          </div>
+        </div>
+        
+        <!-- Circles which indicates the steps of the form: -->
+        <div style="text-align:center;margin-top:40px;">
+          <span class="step"></span>
+          <span class="step"></span>
+        </div>
+
+      </form>
+
+      <input type="hidden" value="AUTHENTICATION" id="pageName" />
+      <input type="hidden" value="2" id="currentStep" />
+      <input type="hidden" value="KIO456251ID" id="kioskID" />
+      <input type="hidden" value="" id="hdnDescription" />
+      <input type="hidden" value="" id="attName" />
+      <input type="hidden" value="" id="ACR" />
+      <input type="hidden" value="" id="attProfileImage" />
+      <input type="hidden" value="" id="attLocationType" />
+      <input type="hidden" value="0" id="flagURL" />
+      <input type="hidden" value="/H1Demo/authentication/authenticateuser" id="hdnAuthenticateUserTemplate" />
+      <input type="hidden" value="/H1Demo/authentication/deleteusertemplate" id="hdnDeleteUserTemplate" />
+      <input type="hidden" value="/H1Demo/admin/deleteuserenrollment" id="hdnDeleteUserEnrollment" />
+      <input type="text" value="Test" id="txtFocus" style="display:none;" />
+      
+    </div>
+
+    <!-- Footer -->
+    <% include partials/footer %>
+
+  </body>
+</html>

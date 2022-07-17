@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><%= title %></title>
+        
+        <link rel="stylesheet" href="/css/bootstrap.css"/>
+        <link rel="stylesheet" href="/css/style.css"/>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        
+        <script type="text/javascript" src="/javascripts/common/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="/javascripts/common/popper.min.js"></script>
+        <script type="text/javascript" src="/javascripts/common/bootstrap.js"></script>
+        <script type="text/javascript" src="/javascripts/common/bootstrap.bundle.js"></script>
+        <script type="text/javascript" src="/javascripts/common/ua-parser.min.js"></script>
+
+        <script type="text/javascript" src="/javascripts/plugin_manager.js"></script>
+        <script type="text/javascript" src="/javascripts/enrollment.js"></script>
+    </head>
+
+    <body>
+      <!-- Header -->
+      <% include partials/header %>
+
+      <!-- Main Content -->
+      <div class="container">
+
+        <!-- Alerts -->
+        <% include partials/alert %>
+
+        <!-- Multi-Step Form -->
+        <form id="enrollForm" action="">
+
+          <!-- Step One: Select Action -->
+          <div class="step-one tab">
+            <p class="title">Enrollment Wizard</p>
+            <p class="content">Please click next to start Enrollment.</p>
+          </div>
+          
+          <!-- Step Two: Agree to Terms and Conditions -->
+          <div class="step-two terms tab">
+            <div class="terms-title">
+              <p><strong>Voluntary Consent: <strong>Collection And Limited Use Of Biometric Identifiers</strong></strong></p>
+              
+            </div>
+  
+            <div class="terms-content">
+              <p>As a demo user of Hitachi H1 Demo Solution, you agree to access this under terms of an applicable NDA. You will use this for the sole purpose of evaluation of Hitachi’s product for your specific business needs only. Additionally, you consent to the following: </p>
+            
+              <p>
+                <strong><em><strong><em>Important: </em></strong></em></strong>
+                <em><em> This Finger Vein Authentication technology is offered and managed by Hitachi Europe Ltd.  To the extent permitted by law, Hitachi Europe Ltd makes no guarantees about the Finger Vein Authentication program or any of its components, and expressly disclaims all liability related thereto.</em></em>
+              </p>
+  
+              <p><strong>Purpose: </strong>This solution will scan the veins in your finger to create a finger vein map that is unique to you. This biometric scan will be used to verify your identity when you proceed to evaluate the authentication feature in the same solution.</p>
+  
+              <p><strong>Storage And Retention Of Your Information:</strong> Your Information will be encrypted and stored in a dedicated cloud hosted solution and will be deleted once you opted for deleting the enrolled information after success authentication with your enrolled templates. Additionally, Hitachi may decide to delete some or all the stored data periodically without any prior notification.  </p>
+              
+              <p><strong>Access, Correction, Or Erasure:</strong> If you have questions about how Hitachi Europe Ltd protects Your Information; if you wish to exercise a right of access, correction, or erasure; or to withdraw this consent; please contact the person who has provided you this access.</p>
+              
+              <p class="line">By clicking “I accept,” I agree and acknowledge that:</p>
+                   
+              <ul>
+                <li>I am over the age of 18;</li>
+                <li>I understand the information provided here; and</li>
+                <li><strong>I consent</strong> to collection and use of my personal information as described in this document.</li>
+              </ul>
+              
+              <div class="accept-terms">
+                <label class="lgcheckbox">
+                  <span id="agreeText">I agree to the terms &amp; conditions</span>
+                  <input id="accept-checkbox" type="checkbox" oninput="this.className = ''"><span class="checkmark"></span>
+                </label>
+              </div>
+          
+            </div>
+           
+          </div>
+          
+          <!-- Step Three: Email  -->
+          <div class="step-three tab">
+            <p class="title">Enrolling Email</p>
+            <p class="content">Please enter your info to associate wtih finger enrollment.</p>
+            <p><input id="first" placeholder="First ..." oninput="this.className = ''" value="Antoinette"></p>
+            <p><input id="last" placeholder="Last ..." oninput="this.className = ''" value="Young"></p>
+            <p><input id="email" placeholder="Email ..." oninput="this.className = ''" value="antoinette.young@pwc.com"></p>
+          </div>
+          
+          <!-- Step Four: Finger Placement -->
+          <div class="step-four tab">
+            <p class="title">Finger Placement </p>
+            <p class="content">You will enroll middle finger of each hand. Each enrollment will involve three enrollment captures and one verification capture. Please ensure you place your finger in the guide of the scanner as shown below. You will start enrollment on the next screen.</p>
+            <div>
+              <img src="images/StepFour.png">
+            </div>
+          </div>
+  
+          <!-- Step Five: Directions 2 -->
+          <div class="step-five tab">
+            <p class="title">Enrolling Finger </p>
+            <p class="content">You will now enroll your left middle finger.</p>
+            <div class="handsVisual mt-3">
+              <div class="row no-gutters">
+                <div class="col-6">
+                    <div class="leftHand">
+                        <div class="custom-control custom-radio">
+                            <label><img id="ImgLeftHandActive" src="/images/StepFiveLeft.png"></label>
+                        </div>
+    
+                        <!--<p id="lblMsg5Page5"></p>-->
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="rightHand">
+                        <div class="custom-control custom-radio">
+                            <label><img id="ImgRightHandGrey" src="/images/StepFiveRight.png"></label>
+                        </div>
+                        <!-- <p id="lblMsg6Page5"></p>-->
+                    </div>
+                </div>
+              </div>
+  
+            </div>
+          </div>
+  
+          <!-- Step Six: Success/Failure  -->
+          <div class="step-six tab">
+            <p class="title">Enrollment Results</p>
+            <p class="content">
+              Phew, You Did It! Congratulations <span id="user">Demo User</span>
+              <span id="email">[johny.smithy@example.com] !</span>
+              You successfully scanned your First Finger. Easy, right?
+              Let's do that again with your other middle finger.
+            </p>
+            <p><input placeholder="Email ..." oninput="this.className = ''" value="antoinette.young@pwc.com"></p>
+          </div>
+          
+          <div class="actions" style="overflow:auto;">
+            <div style="float:right;">
+              <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+              <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+            </div>
+          </div>
+          
+          <!-- Circles which indicates the steps of the form: -->
+          <div style="text-align:center;margin-top:40px;">
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+          </div>
+          
+        </form>
+
+        <div class="row no-gutters" id="MainContent"></div>
+        <div id="pluginDiv" style="display:none;"></div>
+
+        <input type="hidden" value="ENROLLMENT" id="pageName" />
+        <input type="hidden" value="2" id="currentStep" />
+        <input type="hidden" value="KIO456250ID" id="kioskID" />
+        <input type="hidden" value="" id="attName" />
+        <input type="hidden" value="" id="attEmailID" />
+        <input type="hidden" value="" id="attLocationType" />
+        <input type="hidden" value="" id="hdnFinger1" />
+        <input type="hidden" value="" id="hdnVerifyFinger1" />
+
+      </div>
+
+      <!-- Footer -->
+      <% include partials/footer %>
+
+    </body>
+</html>

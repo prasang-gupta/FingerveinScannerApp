@@ -1,0 +1,14 @@
+ver-001
+: Basic app (successfully hosted on Beanstalk)
+
+ver-002
+: Added /returndata endpoint for returing all data
+: Changed the successful negative responses from 4xx to 2xx
+: Now all calls return "statuscode" and "description"
+: /authenticate returns "first", "last" and "email" instead of "id"
+
+ver-003
+: Removed JSON file storage
+: Replaced storage with MySQL database
+: Removed field "id" from database
+

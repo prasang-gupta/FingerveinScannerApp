@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><%= title %></title>
+        
+        <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="/css/style.css"/>
+
+        <script type="text/javascript" src="/javascripts/common/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="/javascripts/common/popper.min.js"></script>
+        <script type="text/javascript" src="/javascripts/common/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="/javascripts/common/popper.min.js"></script>
+        <script type="text/javascript" src="/javascripts/common/bootstrap.js"></script>
+        <script type="text/javascript" src="/javascripts/common/bootstrap.bundle.js"></script>
+
+    </head>
+
+    <body>
+
+      <!-- Header -->
+      <% include partials/header %>
+      
+      <!-- Main Content -->
+      <div class="container">
+
+        <h1>Fingervein Scanner Demo</h1>
+   
+        <div class="menu-container"> 
+          <div class="menu row align-items-center">
+            <div class="menu-item col-md-6 align-self-center">
+              <a href="/enroll"><img src="images/enrollment.png" alt="Enroll New Finger"></a>
+            </div>
+            <div class="menu-item col-md-6 align-self-center">
+              <a href="/authenticate"><img src="images/authenticate.png" alt="Authenticate Finger"></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer -->
+      <% include partials/footer %>
+
+    </body>
+</html>
